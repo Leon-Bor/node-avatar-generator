@@ -1,0 +1,1 @@
+## Dieser Ordner entält: den unteren Teil der Bohne (Antrieb, evtl. Hose oder ähliches)

@@ -1,0 +1,1 @@
+## Dieser Ordner entält: Kopfbedekungen (Hütte etc.)
