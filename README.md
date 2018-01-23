@@ -11,14 +11,16 @@ There for this avatar generator need 36 * 32 = 1152 images. That means there are
 
 To store the old generated images, there is a version number in the image link. After changing or adding images the version number should be increased. Otherwise Avatars generated in the past might change.
 
-This project also contains a UI for building that avatar. See a demo here [http://bohne.voteitup.net].
+This project also contains a UI for building that avatar. See a demo here http://bohne.voteitup.net.
 
 
 ## Install / Development
 
+Make sure you are able to run the npm canvas packages.
+https://github.com/Automattic/node-canvas
 ```bash
-git clone https://github.com/vladotesanovic/angular2-express-starter
-cd angular2-express-starter
+git clone https://github.com/Leon-Bor/node-avatar-generator.git
+cd node-avatar-generator
 
 # Install dependencies
 npm install
@@ -30,9 +32,6 @@ npm run start
 # Application ( epxress ) API: http://localhost:4300
 ```
 
-Install Redux DevTools chrome extenstion:
-
-https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
 
 ## Build / Production
 
