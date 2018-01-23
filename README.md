@@ -9,7 +9,7 @@
 The base concept is to generate a md5 hash and get a diffrent avatar for each hash.
 There for this avatar generator need 36 * 32 = 1152 images. That means there are ~ 36³² diffrent possibilities. If not all images are in place it will have a fallback to a default image. 
 
-To store the old generated images, there is a version number in the image link. After changing or adding images the version number should be increased. Otherwise the Avatar might change.
+To store the old generated images, there is a version number in the image link. After changing or adding images the version number should be increased. Otherwise Avatars generated in the past might change.
 
 This project also contains a UI for building that avatar. See a demo here [http://bohne.voteitup.net].
 
