@@ -46,5 +46,11 @@ Structure of dist folder:
 /dist/server <-- expressjs
 /dist/client <-- angular2
 
+Start client form ./dist/client
+pm2 start /usr/bin/http-server -- -p 5000 -d false
+
+Start server with:
+pm2 start dist/server/bin/www.js
+
 ```
 
