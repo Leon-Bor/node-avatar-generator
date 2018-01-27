@@ -21,7 +21,7 @@
     "npm": "5.2.0"
   },
   "repository": {
-    "url": "https://github.com/vladotesanovic/angular2-express-starter"
+    "url": "https://github.com/Leon-Bor/node-avatar-generator"
   },
   "private": true,
   "dependencies": {

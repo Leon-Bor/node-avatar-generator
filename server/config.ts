@@ -4,5 +4,8 @@ export const secret = "RbBQqA6uF#MsRF8s7h*?@=95HUm&DgMDd6zLFn4XzWQ6dtwXSJwBX#?gL
 export const length = 128;
 export const digest = "sha256";
 export const imageType = "jpg";
-export const clientUrl = 'http://bohne.voteitup.net';
-export const serverUrl = 'http://bohne-api.voteitup.net';
+
+export const clientUrl = process.env.NODE_ENV == "production" ? 
+                        'http://bohne.voteitup.net' : 'http://localhost:5000';
+export const serverUrl = process.env.NODE_ENV == "production" ? 
+                        'http://bohne-api.voteitup.net' : 'http://localhost:'+serverPort;

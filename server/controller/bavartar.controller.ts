@@ -23,7 +23,7 @@ class BavatarController{
   }
 
   async loadImages(): Promise<any> {
-    console.log('load images')
+    console.log('load images2')
     const getDirs = p => fs.readdirSync(p).filter(f => fs.statSync(path.join(p, f)).isDirectory())
     this.dirs = getDirs(this.imageFolder).map( (d) => parseInt(d)).sort((a, b) => a - b);
     

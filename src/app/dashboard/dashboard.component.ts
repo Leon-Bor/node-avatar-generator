@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ImageService } from "../shared/services/image.service";
 import Image from "../../../server/models/image.model";
-import { serverUrl } from "../../../server/config";
+
+import { environment } from "../../environments/environment" 
 
 @Component({
   selector: 'app-dashboard',
@@ -14,10 +15,9 @@ import { serverUrl } from "../../../server/config";
 export class DashboardComponent {
   form: FormGroup;
   dirs: Array<Array<Image>>;
-  baseUrl;
+  baseUrl = environment.serverUrl;
 
   constructor(public imageService: ImageService) {
-    this.baseUrl = serverUrl;
     this.imageService.dirs.subscribe( (data: Array<any>) =>{
       this.dirs = data;
     } )

@@ -2,16 +2,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable'; 
-import { serverUrl } from "../../../../server/config";
+import { environment } from "../../../environments/environment"
 
 @Injectable()
 export class ImageService {
 
-  baseUrl = serverUrl;
   dirs: Observable<Object>;
 
   constructor(private http: HttpClient) {
-    this.dirs = this.http.get(`${this.baseUrl}/bavatar/images`)
+    this.dirs = this.http.get(`${environment.serverUrl}/bavatar/images`)
   }
 
 }

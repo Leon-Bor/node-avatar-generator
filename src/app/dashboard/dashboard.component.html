@@ -1,8 +1,8 @@
 <div>
   <div *ngFor="let dir of dirs; let index = index;">
-      <div *ngFor="let image of dir">
-        {{index}}
-          <img src="{{ baseUrl + '/images/bimages/' + index + '/' +image.fileName}}" width=50>
+      <div *ngFor="let image of dir; let index2 = index" class="image-container" [ngClass]="{'croped': index2 == 0}">
+        {{index}} 
+          <img class="img" src="{{ baseUrl + '/images/bimages/' + index + '/' +image.fileName}}">
         </div>
   </div>
 </div>
