@@ -28,8 +28,8 @@ npm install
 # start server
 npm run start
 
-# Client url: http://localhost:4200
-# Application ( epxress ) API: http://localhost:4300
+# Client url: http://localhost:5000
+# Application ( epxress ) API: http://localhost:5005
 ```
 
 
