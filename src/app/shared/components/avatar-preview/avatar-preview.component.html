@@ -1,3 +1,36 @@
-<p>
-  avatar-preview
-</p>
+<div class="avatar-preview col-12">
+  <div class="row">
+    <div class="col-12">
+      <p class="avatar-preview__title">Deine Bohne</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="avatar-preview__image-container">
+        <div *ngFor="let dir of dirs" class="avatar-preview__image" ng-style="{'z-index': dir.selectedImage.zIndex}">
+            <img [src]="baseUrl + '/images/bimages/' + dir.directoryName + '/' +dir.selectedImage.fileName" *ngIf="dir.selectedImage">
+        </div>
+        <div class="avatar-preview__image-border"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-12">
+        <p class="avatar-preview__hash">
+            MD5: {{md5Hash}}
+        </p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="avatar-preview__btn-generate-container">
+        <a 
+        [href]="baseUrl + '/bavatar/'+generatorVersion+'/'+md5Hash" target="_blank">
+          <button class="avatar-preview__btn-generate">
+              Bohne Erstellen
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

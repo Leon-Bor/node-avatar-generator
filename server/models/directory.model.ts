@@ -43,40 +43,47 @@ export default class Directory {
                 instanceData.allowNoImage = false;
                 instanceData.defaultImage = "00_1000.png";
                 instanceData.previewImage = "00_1000.png";
+                instanceData.selectedImage = new Image({"fileName":"00_1000.png","path":"server/public/images/bimages","hashPosition":0,"directoryName":0,"hashChar":"00","zIndex":1000})
                 break;
             case 1:
                 // bohne
                 instanceData.allowNoImage = false;
                 instanceData.defaultImage = "00_5000.png";
                 instanceData.previewImage = "00_5000.png";
+                instanceData.selectedImage = new Image({"fileName":"00_5000.png","path":"server/public/images/bimages","hashPosition":2,"directoryName":1,"hashChar":"00","zIndex":5000})
                 break;
             case 2:
                 // augen
                 instanceData.allowNoImage = false;
                 instanceData.defaultImage = "00_6000.png";
                 instanceData.previewImage = "00_6000.png";
+                instanceData.selectedImage = new Image({"fileName":"00_6000.png","path":"server/public/images/bimages","hashPosition":4,"directoryName":2,"hashChar":"00","zIndex":6000})
                 break;
             case 3:
                 // mund
                 instanceData.allowNoImage = false;
                 instanceData.defaultImage = "00_6000.png";
                 instanceData.previewImage = "00_6000.png";
+                instanceData.selectedImage = new Image({"fileName":"00_6000.png","path":"server/public/images/bimages","hashPosition":6,"directoryName":3,"hashChar":"00","zIndex":6000})
                 break;
             case 4:
-                // bohne
+                // antrieb
                 instanceData.allowNoImage = false;
                 instanceData.defaultImage = "00_4000.png";
                 instanceData.previewImage = "00_4000.png";
+                instanceData.selectedImage = new Image({"fileName":"00_4000.png","path":"server/public/images/bimages","hashPosition":8,"directoryName":4,"hashChar":"00","zIndex":4000})
                 break;
             case 5:
-                // antrieb
+                // hose
                 instanceData.defaultImage = "00_6000.png";
                 instanceData.previewImage = "00_6000.png";
+                instanceData.selectedImage = new Image({"fileName":"00_6000.png","path":"server/public/images/bimages","hashPosition":10,"directoryName":5,"hashChar":"00","zIndex":6000})
                 break;
             case 6:
                 // hut
                 instanceData.defaultImage = "00_7000.png";
                 instanceData.previewImage = "00_7000.png";
+                instanceData.selectedImage = new Image({"fileName":"00_7000.png","path":"server/public/images/bimages","hashPosition":12,"directoryName":6,"hashChar":"00","zIndex":7000})
                 break;
             case 7:
                 break;

@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/scss/bootstrap.scss';
-
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
 body {
 
   background: url("/assets/bg.jpg");
@@ -27,3 +27,9 @@ body {
     100% { transform: rotate(360deg); }
   }
   
+
+  *{
+    font-family: 'Architects Daughter', cursive;
+  }
+
+  button:focus {outline:0;}

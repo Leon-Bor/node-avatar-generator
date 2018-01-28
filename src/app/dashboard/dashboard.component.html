@@ -1,5 +1,15 @@
 <div class="dashboard container-fluid" >
+    <div class="row">
+        <div class="col-12">
+          <p class="dashboard__title--large">Erstelle deine Bohne</p>
+        </div>
+      </div>
   <div class="dir-container" *ngIf="dirs">
+    <div class="row">
+      <div class="col-12">
+        <p class="dashboard__title">Kategorien:</p>
+      </div>
+    </div>
     <div class="row">
         <div *ngFor="let dir of dirs; let index = index" class="col-xs" >
           <app-dir-card
@@ -10,12 +20,16 @@
           ></app-dir-card>
         </div>
     </div>
-
   </div>
 
   <div class="generator-container row">
 
     <div class="generator-container__images col-sm" >
+      <div class="row" *ngIf="dirs[currentDirIndex]">
+        <div class="col-12">
+          <p class="dashboard__title">Equipment:</p>
+        </div>
+      </div>
       <div class="row" *ngIf="dirs[currentDirIndex]">
           <div *ngFor="let image of dirs[currentDirIndex].images">
               <app-image-card
@@ -26,14 +40,14 @@
               ></app-image-card>
           </div>
       </div>
-
     </div>
 
     <div class="generator-container__preview col-sm">
-      <app-avatar-preview></app-avatar-preview>
+      <app-avatar-preview
+      [dirs]="dirs"
+      [md5Hash]="md5Hash"
+      ></app-avatar-preview>
     </div>
 
   </div>
-
-
 </div>

@@ -1,6 +1,11 @@
 .main {
-  padding: 20px;
+  
   min-height: calc(100vh - 53px);
   height: 100%;
   width: 100%;
+  padding: 10px;
+  
+  @media (min-width: 575px) {
+    padding: 20px;
+  }
 }

@@ -16,8 +16,8 @@ export class DashboardComponent {
   form: FormGroup;
   dirs: Array<Directory>;
   baseUrl = environment.serverUrl;
-  currentDirIndex: number = null;
-  selectedImage = null;
+  currentDirIndex: number = 0;
+  md5Hash: String = "";
 
   constructor(public imageService: ImageService) {
     this.imageService.dirs.subscribe( (dirs: Array<any>) =>{
@@ -25,7 +25,7 @@ export class DashboardComponent {
         d.images = d.images.map( (i) => new Image(i) )
         return new Directory(d)
       });
-      console.log(this.dirs)
+      this.generateHash();
     } )
   }
 
@@ -35,6 +35,19 @@ export class DashboardComponent {
 
   setSelectedImage(image): void {
     this.dirs[this.currentDirIndex].selectedImage = image;
+    this.generateHash();
+  }
+
+  generateHash(): void {
+    this.md5Hash = "";
+    this.dirs.map( (d: Directory)=>{
+      if(d.selectedImage){
+        console.log(d.selectedImage.hashChar)
+        this.md5Hash = this.md5Hash + d.selectedImage.hashChar
+      }else{
+        this.md5Hash += "00";
+      }
+    }) 
   }
 
 }
