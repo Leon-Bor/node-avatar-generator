@@ -1,4 +1,4 @@
-export const version = "v1";
+export const version = "v0.0.1";
 export const serverPort = 5005;
 export const secret = "RbBQqA6uF#MsRF8s7h*?@=95HUm&DgMDd6zLFn4XzWQ6dtwXSJwBX#?gL2JWf!";
 export const length = 128;

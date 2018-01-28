@@ -1,10 +1,21 @@
+import Image from './image.model'
+
 export default class Directory {
-    public name: string = null;
-    public selectionType: string = "none_single"; // none_single, selected_single, none_multiple, selected_multiple
-    public clip: any = {x1:0,y1:0,x2:1024,y2:1024};
+    
+    // none_single, selected_single, none_multiple, selected_multiple
+    public selectionType: string = "none_single"; 
+    public directoryName: number = null;
+    public defaultImage = null;
+    public previewImage = null;
+    public images: Array<Image> = [];
+    public previewClip: any = {
+        marginTop: 0,
+        marginLeft: 0,
+        width: 1024,
+        height: 1024
+    };
 
-
-    constructor(instanceData?: Directory) {
+    constructor(instanceData?) {
       if (instanceData) {
         this.deserialize(instanceData);
       }
@@ -15,13 +26,13 @@ export default class Directory {
   
       for (const key of keys) {
         if (instanceData.hasOwnProperty(key)) {
-          this[key] = this.setSelectionType(instanceData[key]);
+          this[key] = this.setDefaults(instanceData[key]);
         }
       }
 
     }
 
-    private setSelectionType(instanceData): any {
+    private setDefaults(instanceData): any {
 
         switch (instanceData.hashPosition) {
             case 0 :

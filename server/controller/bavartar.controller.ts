@@ -3,12 +3,12 @@ import * as fs from "fs";
 import * as path from "path";
 import Image from "../models/image.model";
 import { version, imageType } from "../config";
+import Directory from "../models/directory.model";
 
 class BavatarController{
   private static _instance: BavatarController;
   public imageFolder: string = "server/public/images/bimages";
-  public images: Array<Array<Image>> = [];
-  public dirs: Array<number> = [];
+  public dirs: Array<Directory> = [];
 
   constructor(){ 
     this.loadImages();
@@ -25,23 +25,27 @@ class BavatarController{
   async loadImages(): Promise<any> {
     console.log('load images2')
     const getDirs = p => fs.readdirSync(p).filter(f => fs.statSync(path.join(p, f)).isDirectory())
-    this.dirs = getDirs(this.imageFolder).map( (d) => parseInt(d)).sort((a, b) => a - b);
-    
+
+    let dirNames = getDirs(this.imageFolder).map( (d) => parseInt(d)).sort((a, b) => a - b);
+    this.dirs = dirNames.map( (d) => new Directory( { directoryName: d }) )
+
+
     for (let i = 0; i < this.dirs.length; i++) {
 
-      let imagesInFolder = await this.getImagesInFolder(this.dirs[i]);
+      let imagesInFolder = await this.getImagesInFolder(this.dirs[i].directoryName);
 
         imagesInFolder = imagesInFolder.map( (img) => {
-          let newImage = new Image();
-              newImage.fileName = img;
-              newImage.hashPosition = i;
-              newImage.path = this.imageFolder;
-              newImage.hashChar = img.split('_')[0];
-              newImage.zIndex = parseInt(img.split('_').pop().slice(0, -4));
-          return newImage;
+          return new Image({
+            fileName: img,
+            hashPosition: i*2,
+            directoryName: i,
+            path: this.imageFolder,
+            hashChar: img.split('_')[0],
+            zIndex: parseInt(img.split('_').pop().slice(0, -4)),
+          });
         } )
 
-      this.images.push(imagesInFolder);
+      this.dirs[i].images = imagesInFolder;
     }
   }
 
@@ -56,8 +60,9 @@ class BavatarController{
     );
   }
 
-  public getImage(dir: number, hashChar: string): Image {
-    let image = this.images[dir].find( (img) => img.fileName.startsWith(hashChar))
+  public getImage(dir: number, hashChars: string): Image {
+    // let image = this.images[dir].find( (img) => img.fileName.startsWith(hashChar))
+    let image = this.dirs[dir].images.find( (img) => img.fileName.startsWith(hashChars))
     return image;
   }
 

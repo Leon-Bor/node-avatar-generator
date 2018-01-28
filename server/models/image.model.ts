@@ -2,10 +2,11 @@ export default class Image {
     public fileName: string = null;
     public path: string = null;
     public hashPosition: number = null;
+    public directoryName: number = null;
     public hashChar: string = null;
     public zIndex: number = null;
 
-    constructor(instanceData?: Image) {
+    constructor(instanceData?) {
       if (instanceData) {
         this.deserialize(instanceData);
       }

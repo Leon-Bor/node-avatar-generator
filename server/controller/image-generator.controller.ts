@@ -10,8 +10,8 @@ import * as mkdirp from 'mkdirp';
 
 class ImageGeneratorController{
   private static _instance: ImageGeneratorController;
-  private imagePath: string = path.join(__dirname, "../public/images/" + version);
-  private imagePath256: string = path.join(__dirname, "../public/images/" + version + "/256");
+  private imagePath: string = path.join(__dirname, "../public/images/cache/" + version);
+  private imagePath256: string = path.join(__dirname, "../public/images/cache/" + version + "/256");
   private imageWhite: string = "server/public/images/bimages/white.jpg";
 
   constructor(){}
@@ -25,7 +25,7 @@ class ImageGeneratorController{
   }
 
   public async genrateImageFromMD5(md5: string): Promise<boolean> {
-    let md5Chars = md5.split('');;
+    let md5Chars = md5.match(/.{1,2}/g)
     if (fs.existsSync(`${this.imagePath}/${md5}.${imageType}`)) {
         console.log("Image exists")
         return true;
@@ -38,8 +38,8 @@ class ImageGeneratorController{
             if(img){
                 bavatarImages.push(img)
             } else {
-                // default fall back is 0_xxxx.png
-                img = bavatarController.getImage(i, "0");
+                // todo: default fall back from dir
+                img = bavatarController.getImage(i, "00");
                 if(img){
                     bavatarImages.push(img)
                 }
@@ -50,8 +50,7 @@ class ImageGeneratorController{
         bavatarImages = bavatarImages.sort((a, b) => a.zIndex - b.zIndex)
         console.log(bavatarImages)
         bavatarImages.map( (image: Image) => {
-            console.log(image.hashPosition)
-            let imagePath = `${bavatarController.imageFolder}/${image.hashPosition}/${image.fileName}`;
+            let imagePath = `${bavatarController.imageFolder}/${image.directoryName}/${image.fileName}`;
             if(fs.existsSync(imagePath)){
                 bavatarImagePath.push(imagePath);
             }

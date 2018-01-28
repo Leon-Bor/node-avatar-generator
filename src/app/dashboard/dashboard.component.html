@@ -1,8 +1,29 @@
-<div>
-  <div *ngFor="let dir of dirs; let index = index;">
-      <div *ngFor="let image of dir; let index2 = index" class="image-container" [ngClass]="{'croped': index2 == 0}">
-        {{index}} 
-          <img class="img" src="{{ baseUrl + '/images/bimages/' + index + '/' +image.fileName}}">
-        </div>
+<div class="dashboard">
+  <div class="dir-container">
+    <div *ngFor="let dir of dirs; let index = index;">
+      <app-dir-card
+        [dir]="dir"
+      ></app-dir-card>
+    </div>
   </div>
+
+  <div class="generator-container">
+
+    <div class="generator-container__images">
+      <div *ngFor="let dir of dirs; let index = index;">
+        <div *ngFor="let image of dir">
+            <app-image-card
+              [image]="image"
+            ></app-image-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="generator-container__preview">
+
+    </div>
+
+  </div>
+
+
 </div>
