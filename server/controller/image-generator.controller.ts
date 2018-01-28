@@ -7,6 +7,7 @@ import { bavatarController } from "../controller/bavartar.controller"
 import * as mergeImages from 'merge-images';
 import * as Canvas from 'canvas';
 import * as mkdirp from 'mkdirp';
+import * as resizeImg from 'resize-img';
 
 class ImageGeneratorController{
   private static _instance: ImageGeneratorController;
@@ -27,19 +28,25 @@ class ImageGeneratorController{
   public async genrateImageFromMD5(md5: string): Promise<boolean> {
     let md5Chars = md5.match(/.{1,2}/g)
     if (fs.existsSync(`${this.imagePath}/${md5}.${imageType}`)) {
-        console.log("Image exists")
+        console.log("Image already exists")
         return true;
     }else{
-        console.log("Image not exists")
+
         let bavatarImages = [];
         let bavatarImagePath = [this.imageWhite];
         for (let i = 0; i < md5Chars.length; i++) {
+            bavatarController.dirs[i]
             let img = bavatarController.getImage(i,md5Chars[i]);
             if(img){
                 bavatarImages.push(img)
             } else {
                 // todo: default fall back from dir
-                img = bavatarController.dirs[i].defaultImage;
+                img = bavatarController.getImage(
+                    i, 
+                    bavatarController.dirs[i].defaultImage ?
+                    bavatarController.dirs[i].defaultImage.split('_')[0] : null
+                );
+
                 if(img){
                     bavatarImages.push(img)
                 }
@@ -48,7 +55,6 @@ class ImageGeneratorController{
 
         // sort by zIndex
         bavatarImages = bavatarImages.sort((a, b) => a.zIndex - b.zIndex)
-        console.log(bavatarImages)
         bavatarImages.map( (image: Image) => {
             let imagePath = `${bavatarController.imageFolder}/${image.directoryName}/${image.fileName}`;
             if(fs.existsSync(imagePath)){
@@ -61,11 +67,17 @@ class ImageGeneratorController{
             Canvas: Canvas,
             width: 1024,
             height: 1024,
-            quality: 0.5,
+            quality: 0.75,
             format: "image/jpeg"
         })
 
-        await this.writeImageToDisk(b64Image, `${this.imagePath}/${md5}.${imageType}`)
+        let renderedImagePath = `${this.imagePath}/${md5}.${imageType}`;
+
+        await this.writeImageToDisk(b64Image, renderedImagePath)
+
+        let buf = await resizeImg(fs.readFileSync(renderedImagePath), {width: 512, height: 512})
+            fs.writeFileSync(renderedImagePath, buf);
+
         return false;
     }
 
