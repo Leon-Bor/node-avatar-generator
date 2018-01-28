@@ -2,7 +2,9 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
 body {
-    background-color: #f8f8f8;
+
+  background: url("/assets/bg.jpg");
+  background-size: cover;
   }
   
   .loader {

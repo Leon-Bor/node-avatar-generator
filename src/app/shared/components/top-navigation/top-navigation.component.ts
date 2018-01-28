@@ -4,7 +4,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ElementRef } fro
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-ui-top-navigation',
   templateUrl: './top-navigation.component.html',
-  styleUrls: ['./top-navigation.component.css']
+  styleUrls: ['./top-navigation.component.scss']
 })
 export class TopNavigationComponent implements OnInit {
 

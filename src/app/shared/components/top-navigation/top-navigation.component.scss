@@ -3,7 +3,7 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #008171;
+  background-color: rgba(255,255,255,0.3);
 }
 
 ul.topnav li {float: left;}
@@ -18,8 +18,8 @@ ul.topnav li a {
   font-size: 17px;
 }
 
-ul.topnav li a:hover {background-color: #555;}
-ul.topnav li a.active {background-color: #555;}
+ul.topnav li a:hover {background-color: rgba(255,255,255,0.7)}
+ul.topnav li a.active {background-color: rgba(0,0,0,0.3)}
 ul.topnav li.icon {display: none;}
 
 @media screen and (max-width:680px) {

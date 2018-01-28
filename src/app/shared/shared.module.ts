@@ -10,6 +10,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ImageService } from "./services/image.service";
 import { ImageCardComponent } from './components/image-card/image-card.component';
 import { DirCardComponent } from './components/dir-card/dir-card.component';
+import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
 @NgModule({
   declarations: [
     ModalComponent,
@@ -18,6 +19,7 @@ import { DirCardComponent } from './components/dir-card/dir-card.component';
     LoaderComponent,
     ImageCardComponent,
     DirCardComponent,
+    AvatarPreviewComponent,
   ],
   imports: [
     CommonModule,
@@ -31,8 +33,8 @@ import { DirCardComponent } from './components/dir-card/dir-card.component';
     TopNavigationComponent,
     LoaderComponent,
     ImageCardComponent,
-
-    DirCardComponent,
+    AvatarPreviewComponent,
+    DirCardComponent
   ],
   providers: [
     ImageService

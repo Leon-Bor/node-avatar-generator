@@ -39,7 +39,7 @@ class ImageGeneratorController{
                 bavatarImages.push(img)
             } else {
                 // todo: default fall back from dir
-                img = bavatarController.getImage(i, "00");
+                img = bavatarController.dirs[i].defaultImage;
                 if(img){
                     bavatarImages.push(img)
                 }

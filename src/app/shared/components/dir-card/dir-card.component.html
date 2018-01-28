@@ -1,3 +1,4 @@
-<p>
-  dir-card works!
-</p>
+<div class="image-dir" [ngClass]="{'selected': selected}" (click)="selectDir()">
+    <img class="image-dir__image" src="{{ baseUrl + '/images/bimages/' + dir.directoryName + '/' +dir.defaultImage}}">
+</div>
+  
