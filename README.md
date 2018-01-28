@@ -7,7 +7,7 @@
 ## Concepts
 
 The base concept is to generate a md5 hash and get a diffrent avatar for each hash.
-There for this avatar generator need 36 * 32 = 1152 images. That means there are ~ 36³² diffrent possibilities. If not all images are in place it will have a fallback to a default image. 
+There for this avatar generator can use up to (16 * 160) 2560 images. If not all images are in place it will have a fallback to a default image. 
 
 To store the old generated images, there is a version number in the image link. After changing or adding images the version number should be increased. Otherwise Avatars generated in the past might change.
 
@@ -46,11 +46,6 @@ Structure of dist folder:
 /dist/server <-- expressjs
 /dist/client <-- angular2
 
-Start client form ./dist/client
-pm2 start /usr/bin/http-server -- -p 5000 -d false
-
-Start server with:
-pm2 start server/bin/www.js
 
 ```
 
