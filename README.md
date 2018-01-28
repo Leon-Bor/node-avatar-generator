@@ -46,6 +46,8 @@ Structure of dist folder:
 /dist/server <-- expressjs
 /dist/client <-- angular2
 
+npm i -g pm2
+pm2 start pm2.yml --env production
 
 ```
 
