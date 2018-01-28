@@ -1,3 +1,6 @@
 <div class="image-card" [ngClass]="{'selected': selected}" (click)="selectImage()">
-  <img class="image-card__image" src="{{ baseUrl + '/images/bimages/' + dir.directoryName + '/' +image.fileName}}">
+  <img class="image-card__image" src="{{ baseUrl + '/images/bimages/' + dir.directoryName + '/' +image.fileName}}"
+  [ngStyle]="{'margin-top': dir.previewClip.marginTop * 3 +'px',
+        'margin-left': dir.previewClip.marginLeft * 3 +'px','width': dir.previewClip.width * 3 +'px','height': dir.previewClip.height * 3 +'px'}"
+        >
 </div>

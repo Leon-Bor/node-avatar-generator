@@ -12,8 +12,8 @@ export default class Directory {
     public previewClip: any = {
         marginTop: 0,
         marginLeft: 0,
-        width: 1024,
-        height: 1024
+        width: 50,
+        height: 50
     };
 
     constructor(instanceData?) {
@@ -50,6 +50,12 @@ export default class Directory {
                 instanceData.allowNoImage = false;
                 instanceData.defaultImage = "00_5000.png";
                 instanceData.previewImage = "00_5000.png";
+                instanceData.previewClip= {
+                    marginTop: -5,
+                    marginLeft: -30,
+                    width: 90,
+                    height: 90
+                }
                 instanceData.selectedImage = new Image({"fileName":"00_5000.png","path":"server/public/images/bimages","hashPosition":2,"directoryName":1,"hashChar":"00","zIndex":5000})
                 break;
             case 2:
@@ -57,6 +63,12 @@ export default class Directory {
                 instanceData.allowNoImage = false;
                 instanceData.defaultImage = "00_6000.png";
                 instanceData.previewImage = "00_6000.png";
+                instanceData.previewClip= {
+                    marginTop: -10,
+                    marginLeft: -65,
+                    width: 130,
+                    height: 130
+                }
                 instanceData.selectedImage = new Image({"fileName":"00_6000.png","path":"server/public/images/bimages","hashPosition":4,"directoryName":2,"hashChar":"00","zIndex":6000})
                 break;
             case 3:
@@ -64,6 +76,12 @@ export default class Directory {
                 instanceData.allowNoImage = false;
                 instanceData.defaultImage = "00_6000.png";
                 instanceData.previewImage = "00_6000.png";
+                instanceData.previewClip= {
+                    marginTop: -20,
+                    marginLeft: -70,
+                    width: 140,
+                    height: 140
+                }
                 instanceData.selectedImage = new Image({"fileName":"00_6000.png","path":"server/public/images/bimages","hashPosition":6,"directoryName":3,"hashChar":"00","zIndex":6000})
                 break;
             case 4:
@@ -71,18 +89,36 @@ export default class Directory {
                 instanceData.allowNoImage = false;
                 instanceData.defaultImage = "00_4000.png";
                 instanceData.previewImage = "00_4000.png";
+                instanceData.previewClip= {
+                    marginTop: -40,
+                    marginLeft: -10,
+                    width: 90,
+                    height: 90
+                }
                 instanceData.selectedImage = new Image({"fileName":"00_4000.png","path":"server/public/images/bimages","hashPosition":8,"directoryName":4,"hashChar":"00","zIndex":4000})
                 break;
             case 5:
                 // hose
                 instanceData.defaultImage = "00_6000.png";
                 instanceData.previewImage = "00_6000.png";
+                instanceData.previewClip= {
+                    marginTop: -20,
+                    marginLeft: -22.5,
+                    width: 95,
+                    height: 95
+                }
                 instanceData.selectedImage = new Image({"fileName":"00_6000.png","path":"server/public/images/bimages","hashPosition":10,"directoryName":5,"hashChar":"00","zIndex":6000})
                 break;
             case 6:
                 // hut
                 instanceData.defaultImage = "00_7000.png";
                 instanceData.previewImage = "00_7000.png";
+                instanceData.previewClip= {
+                    marginTop: 0,
+                    marginLeft: -40,
+                    width: 100,
+                    height: 100
+                }
                 instanceData.selectedImage = new Image({"fileName":"00_7000.png","path":"server/public/images/bimages","hashPosition":12,"directoryName":6,"hashChar":"00","zIndex":7000})
                 break;
             case 7:
