@@ -4,6 +4,7 @@ ul.topnav {
   padding: 0;
   overflow: hidden;
   background-color: rgba(255,255,255,0.3);
+
 }
 
 ul.topnav li {float: left;}
@@ -16,6 +17,22 @@ ul.topnav li a {
   text-decoration: none;
   transition: 0.3s;
   font-size: 17px;
+
+  &.icon {
+    padding: 0px 10px;
+    padding-top: 10px;
+    height: 53px;
+    min-width: 53px;
+    &.voteitup{
+      padding-top: 15px;
+      color: #f2f2f2;
+      svg{
+        fill: currentColor;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
 }
 
 ul.topnav li a:hover {background-color: rgba(255,255,255,0.7)}
