@@ -12,9 +12,9 @@ export class ImageCardComponent implements OnInit {
   @Input() image;
   @Input() dir;
   @Input() selected;
-  
   @Output() onClick = new EventEmitter();
-
+  
+  public isLoading = true;
   public baseUrl = environment.serverUrl;
 
   constructor() { }
@@ -24,6 +24,11 @@ export class ImageCardComponent implements OnInit {
 
   selectImage(): void {
     this.onClick.emit(this.image);
+  }
+
+  hideLoader(): void {
+    console.log("image loaded");
+    this.isLoading = false;
   }
 
 }

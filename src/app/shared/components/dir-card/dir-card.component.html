@@ -4,6 +4,10 @@
         src="{{ baseUrl + '/images/bimages/' + dir.directoryName + '/' +dir.defaultImage}}"
         [ngStyle]="{'margin-top': dir.previewClip.marginTop+'px',
         'margin-left': dir.previewClip.marginLeft+'px','width': dir.previewClip.width+'px','height': dir.previewClip.height+'px'}"
+        (load)="hideLoader()"
+        [ngClass]="{'hidden': isLoading}"
         >
+
+        <app-ui-loader-inline [visible]="isLoading" [small]="true"></app-ui-loader-inline>
 </div>
   

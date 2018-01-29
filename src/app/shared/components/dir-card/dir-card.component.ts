@@ -11,7 +11,8 @@ export class DirCardComponent implements OnInit {
   @Input() dir;
   @Input() selected;
   @Output() onClick = new EventEmitter();
-
+  
+  public isLoading = true;
   public baseUrl = environment.serverUrl;
 
   constructor() {
@@ -23,6 +24,11 @@ export class DirCardComponent implements OnInit {
 
   selectDir(): void {
     this.onClick.emit();
+  }
+
+  hideLoader(): void {
+    console.log("image loaded");
+    this.isLoading = false;
   }
 
 }
