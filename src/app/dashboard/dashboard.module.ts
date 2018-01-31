@@ -8,13 +8,16 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { GeneratedAvatarComponent } from './components/generated-avatar/generated-avatar.component';
 
+import { ClipboardModule } from 'ngx-clipboard';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ClipboardModule
   ],
   declarations: [
     DashboardComponent,

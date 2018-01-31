@@ -1,17 +1,17 @@
 <!-- The Modal -->
-<div class="modal">
+<div class="ng-modal">
 
   <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close" routerLink="../">×</span>
+  <div class="ng-modal-content">
+    <div class="ng-modal-header">
+      <span class="close" (click)="onClose()">×</span>
       <h2><ng-content select="app-modal-header"></ng-content></h2>
     </div>
-    <div class="modal-body">
+    <div class="ng-modal-body">
       <ng-content select="app-modal-body"></ng-content>
     </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
+    <div class="ng-modal-footer">
+      <h3><ng-content select="app-modal-footer"></ng-content></h3>
     </div>
   </div>
 

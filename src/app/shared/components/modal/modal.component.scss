@@ -1,5 +1,5 @@
 /* The Modal (background) */
-.modal {
+.ng-modal {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -13,35 +13,50 @@
 }
 
 /* Modal Header */
-.modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+.ng-modal-header {
+  padding: 10px;
+  background-color: #fff700;
+  color: black;
+  font-weight: bold;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 /* Modal Body */
-.modal-body {padding: 2px 16px;}
+.ng-modal-body {padding: 2px 16px;}
 
 /* Modal Footer */
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
+.ng-modal-footer {
+  padding: 10px;
+  background-color: #d2d2d2;
   color: white;
+
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 /* Modal Content */
-.modal-content {
+.ng-modal-content {
+
+  border-radius: 5px;
+  text-align: center;
   position: relative;
   background-color: #fefefe;
   margin: auto;
   padding: 0;
   border: 1px solid #888;
   width: 80%;
+  max-width: 500px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+
+  h2, h3{
+    margin-bottom: 0px;
+  }
 }
 
 /* Add Animation */

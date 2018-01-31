@@ -5,14 +5,17 @@ import { GeneratedAvatarComponent } from './components/generated-avatar/generate
 export const routes: Route[] = [
   {
     path: '',
-    component: DashboardComponent,
-    children: [
-      {
-        path: 'generated-avatar',
-        component: GeneratedAvatarComponent,
-        outlet: 'modal'
-      }
-    ]
+    pathMatch: "full",
+    redirectTo: 'bavatar',
   }, 
+  {
+    path: 'bavatar',
+    component: DashboardComponent
+  },
+  {
+    path: 'generated-avatar/:hash',
+    component: GeneratedAvatarComponent,
+    outlet: 'modal'
+  }
 
 ];
