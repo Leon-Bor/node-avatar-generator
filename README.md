@@ -10,7 +10,7 @@ The base concept is to generate a md5 hash and get a different avatar for each h
 There for this avatar generator can use up to (16 * 16 * 16) 4096 images. If not all images are in place it will have a fallback to a default image. 
 
 The md5 hash is splitted into 16 categories:
-[00][00][00][00][00][00][00][00][00][00][00][00][00][00][00][00]. For every combination of the 2 characters can be used 1 image. If a image for a character combination is not existing, it will fallback to the categorie default image. The default image is set in the Directory model. The categories are located in `/server/public/images/bvatar`. Within these categories(dirs) you have to place the images.
+[00][00][00][00][00][00][00][00][00][00][00][00][00][00][00][00]. For every combination of the 2 characters can be used 1 image. If a image for a character combination is not existing, it will fallback to the categorie default image. The default image is set in the Directory model. The category folders are located in `/server/public/images/bavatar`. Within these categories(dirs) you have to place the images.
 
 To store the old generated images, there is a version number in the image link. After changing or adding images the version number should be increased. Otherwise Avatars generated in the past might change.
 
