@@ -14,6 +14,7 @@ export class GeneratedAvatarComponent implements OnInit {
   public baseUrl = environment.serverUrl;
   public generatorVersion = environment.version;
   public link;
+  public isLoading = true;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -23,6 +24,10 @@ export class GeneratedAvatarComponent implements OnInit {
       this.link = this.baseUrl + '/bavatar/'+ this.generatorVersion+'/'+this.hash;
    });
 
+  }
+
+  hideLoader(): void {
+    this.isLoading = false;
   }
 
 }

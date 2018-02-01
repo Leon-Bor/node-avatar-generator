@@ -6,11 +6,10 @@
   <app-modal-body app-modal-body>
     <div class="generared-avatar-modal">
 
-      <p class="generared-avatar-modal__label">Dein Bohnen-Avatar wurde erstellt. 
-          <img class="generared-avatar-modal__image" [src]="baseUrl + '/bavatar/'+generatorVersion+'/'+hash">
-
-        <br> Hier ist der Link zu deiner Bohne:
-      </p>
+      <p class="generared-avatar-modal__label">Dein Bohnen-Avatar wurde erstellt.</p>
+      <img class="generared-avatar-modal__image" [src]="baseUrl + '/bavatar/'+generatorVersion+'/'+hash" (load)="hideLoader()" [ngClass]="{'hidden': isLoading}">
+      <app-ui-loader-inline [visible]="isLoading" [small]="true"></app-ui-loader-inline>
+      <p class="generared-avatar-modal__label">Hier ist der Link zu deiner Bohne: </p>
 
       <div class="input-group mb-3">
         <input  #inputTarget type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="link">

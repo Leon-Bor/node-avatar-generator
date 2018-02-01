@@ -24,8 +24,6 @@ export class AvatarPreviewComponent implements OnInit {
   }
 
   showAvatarModal(): void {
-    console.log('show modal')
-      // baseUrl + '/bavatar/'+generatorVersion+'/'+md5Hash
       this.router.navigate(['generator',{ outlets: { modal: ['generated-avatar', this.md5Hash] } }]);
   }
   

@@ -27,7 +27,6 @@ export class DirCardComponent implements OnInit {
   }
 
   hideLoader(): void {
-    console.log("image loaded");
     this.isLoading = false;
   }
 
