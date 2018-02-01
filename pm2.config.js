@@ -2,7 +2,7 @@ module.exports = {
   apps : [{
     name        : "avatar-generator",
     script      : "./dist/server/bin/www.js",
-    watch       : true,
+    watch       : false,
     env: {
       "NODE_ENV": "development",
     },
