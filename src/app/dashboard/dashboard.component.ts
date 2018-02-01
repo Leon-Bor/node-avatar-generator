@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ImageService } from "../shared/services/image.service";
@@ -18,6 +18,9 @@ export class DashboardComponent {
   baseUrl = environment.serverUrl;
   currentDirIndex: number = 0;
   md5Hash: String = "";
+  verticalOffset: number = 0;
+  minusMargin: number = 250;
+  interval;
 
   constructor(public imageService: ImageService) {
     this.imageService.dirs.subscribe( (dirs: Array<any>) =>{
@@ -27,6 +30,43 @@ export class DashboardComponent {
       });
       this.generateHash();
     } )
+  }
+
+  @HostListener('window:scroll', ['$event']) onScrollEvent($event){
+    let vo = window.pageYOffset ||document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+
+    if(vo > this.minusMargin && window.innerHeight > 700 && !this.isMobile()){
+      this.marginInterval(vo - this.minusMargin)
+    }else{
+      this.marginInterval(0)
+    }
+
+  } 
+
+  isMobile() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      return true;
+    }
+    return false;
+  }
+
+  marginInterval(value) {
+
+    clearInterval(this.interval);
+    this.interval = setInterval(() => {
+
+      if(value > this.verticalOffset){
+        this.verticalOffset++;
+      }else{
+        this.verticalOffset--;
+      }
+
+      if (value == this.verticalOffset) {
+          clearInterval(this.interval);
+        return;
+      }
+    }, 5);
   }
 
   setCurrentDir(index): void {

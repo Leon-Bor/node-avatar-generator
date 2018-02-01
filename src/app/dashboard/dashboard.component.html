@@ -42,11 +42,8 @@
       </div>
     </div>
 
-    <div class="generator-container__preview col-sm">
-      <app-avatar-preview
-      [dirs]="dirs"
-      [md5Hash]="md5Hash"
-      ></app-avatar-preview>
+    <div class="generator-container__preview col-sm" [ngStyle]="{'margin-top': verticalOffset+'px' }">
+      <app-avatar-preview [dirs]="dirs" [md5Hash]="md5Hash"></app-avatar-preview>
     </div>
 
   </div>

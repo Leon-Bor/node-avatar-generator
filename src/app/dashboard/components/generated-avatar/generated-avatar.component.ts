@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from "../../../../environments/environment" 
+import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-generated-avatar',
@@ -8,6 +9,7 @@ import { environment } from "../../../../environments/environment"
   styleUrls: ['./generated-avatar.component.scss']
 })
 export class GeneratedAvatarComponent implements OnInit {
+
   public hash: string;
   public baseUrl = environment.serverUrl;
   public generatorVersion = environment.version;
@@ -20,12 +22,7 @@ export class GeneratedAvatarComponent implements OnInit {
       this.hash = params['hash'];
       this.link = this.baseUrl + '/bavatar/'+ this.generatorVersion+'/'+this.hash;
    });
-  }
-
-
-  copztoClipboard() {
 
   }
-
 
 }
