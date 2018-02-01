@@ -6,7 +6,7 @@
 
 ## Concepts
 
-The base concept is to generate a md5 hash and get a diffrent avatar for each hash.
+The base concept is to generate a md5 hash and get a different avatar for each hash.
 There for this avatar generator can use up to (16 * 16 * 16) 4096 images. If not all images are in place it will have a fallback to a default image. 
 
 The md5 hash is splitted into 16 categories:
