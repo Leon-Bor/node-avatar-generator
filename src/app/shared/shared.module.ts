@@ -12,6 +12,7 @@ import { ImageCardComponent } from './components/image-card/image-card.component
 import { DirCardComponent } from './components/dir-card/dir-card.component';
 import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
 import { LoaderInlineComponent } from './components/loader-inline/loader-inline.component';
+import { TranslateModule } from 'ng2-translate';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoaderInlineComponent } from './components/loader-inline/loader-inline.
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ],
   exports: [
     ModalComponent,

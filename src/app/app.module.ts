@@ -11,6 +11,13 @@ import { AppComponent } from './app.component';
 import { routes } from './app.router';
 import { SharedModule } from './shared/shared.module';
 import { environment } from '../environments/environment';
+import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
+import {HttpModule} from '@angular/http';
+import { Http } from '@angular/http';
+
+export function createTranslateLoader(http: Http) {
+  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -22,12 +29,18 @@ import { environment } from '../environments/environment';
     FormsModule,
     HttpClientModule,
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
+    HttpModule,
     RouterModule.forRoot(
       routes,
       {
         useHash: true
       }
-    )
+    ),
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [Http]
+  })
   ],
   providers: [
   ],

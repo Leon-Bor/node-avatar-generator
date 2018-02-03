@@ -2,23 +2,23 @@
 
 
 <app-ui-modal>
-  <app-modal-header >Bohne Erstellt</app-modal-header>
+  <app-modal-header >{{ 'bean_created' | translate }}</app-modal-header>
   <app-modal-body app-modal-body>
     <div class="generared-avatar-modal">
 
-      <p class="generared-avatar-modal__label">Dein Bohnen-Avatar wurde erstellt.</p>
+      <p class="generared-avatar-modal__label">{{ 'bean_created_long' | translate }}</p>
       <img class="generared-avatar-modal__image" [src]="baseUrl + '/bavatar/'+generatorVersion+'/'+hash" (load)="hideLoader()" [ngClass]="{'hidden': isLoading}">
       <app-ui-loader-inline [visible]="isLoading" [small]="true"></app-ui-loader-inline>
-      <p class="generared-avatar-modal__label">Hier ist der Link zu deiner Bohne: </p>
+      <p class="generared-avatar-modal__label">{{ 'link_to_bean' | translate }}: </p>
 
       <div class="input-group mb-3">
         <input  #inputTarget type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="link">
         <div class="input-group-append">
-          <button [ngxClipboard]="inputTarget" class="btn btn-outline-secondary" type="button">Kopieren</button>
+          <button [ngxClipboard]="inputTarget" class="btn btn-outline-secondary" type="button">{{ 'copy' | translate }}</button>
         </div>
         <div class="input-group-append">
-          <a [ngxClipboard]="inputTarget" class="btn btn-outline-secondary" btn-outline-secondary [href]="link" target="_blank">
-              Öffnen
+          <a [ngxClipboard]="inputTarget" class="btn btn-outline-secondary" [href]="link" target="_blank">
+            {{ 'open' | translate }}
           </a>
         </div>
       </div>

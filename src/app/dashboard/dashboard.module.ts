@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { GeneratedAvatarComponent } from './components/generated-avatar/generated-avatar.component';
 
 import { ClipboardModule } from 'ngx-clipboard';
+import { TranslateModule } from 'ng2-translate';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { ClipboardModule } from 'ngx-clipboard';
     ReactiveFormsModule,
     SharedModule,
     RouterModule.forChild(routes),
-    ClipboardModule
+    ClipboardModule, TranslateModule
   ],
   declarations: [
     DashboardComponent,

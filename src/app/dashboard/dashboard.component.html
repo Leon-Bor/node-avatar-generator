@@ -1,13 +1,13 @@
 <div class="dashboard container-fluid" >
     <div class="row">
         <div class="col-12">
-          <p class="dashboard__title--large">Erstelle deine Bohne</p>
+          <p class="dashboard__title--large">{{ 'create_your_bean' | translate }}</p>
         </div>
       </div>
   <div class="dir-container" *ngIf="dirs">
     <div class="row">
       <div class="col-12">
-        <p class="dashboard__title">Kategorien:</p>
+        <p class="dashboard__title">{{ 'categories' | translate }}:</p>
       </div>
     </div>
     <div class="row">
@@ -27,7 +27,7 @@
     <div class="generator-container__images col-sm" >
       <div class="row" *ngIf="dirs && dirs[currentDirIndex]">
         <div class="col-12">
-          <p class="dashboard__title">Auswahl:</p>
+          <p class="dashboard__title">{{ 'selection' | translate }}:</p>
         </div>
       </div>
       <div class="row" *ngIf="dirs && dirs[currentDirIndex]">
