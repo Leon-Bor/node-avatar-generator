@@ -98,7 +98,7 @@ export default class Directory {
                 instanceData.selectedImage = new Image({"fileName":"00_4000.png","path":"server/public/images/bimages","hashPosition":8,"directoryName":4,"hashChar":"00","zIndex":4000})
                 break;
             case 5:
-                // hose
+                // duesen
                 instanceData.defaultImage = "00_6000.png";
                 instanceData.previewImage = "00_6000.png";
                 instanceData.previewClip= {
@@ -122,6 +122,16 @@ export default class Directory {
                 instanceData.selectedImage = new Image({"fileName":"00_7000.png","path":"server/public/images/bimages","hashPosition":12,"directoryName":6,"hashChar":"00","zIndex":7000})
                 break;
             case 7:
+                // hose
+                instanceData.defaultImage = null;
+                instanceData.previewImage = "01_5500.png";
+                instanceData.previewClip= {
+                    marginTop: -20,
+                    marginLeft: -32.5,
+                    width: 105,
+                    height: 105
+                }
+                instanceData.selectedImage = new Image({"fileName":"01_5500.png","path":"server/public/images/bimages","hashPosition":14,"directoryName":76,"hashChar":"01","zIndex":5500})
                 break;
             case 8:
                 break;

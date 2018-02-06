@@ -82,7 +82,6 @@ export class DashboardComponent {
     this.md5Hash = "";
     this.dirs.map( (d: Directory)=>{
       if(d.selectedImage){
-        console.log(d.selectedImage.hashChar)
         this.md5Hash = this.md5Hash + d.selectedImage.hashChar
       }else{
         this.md5Hash += "00";
