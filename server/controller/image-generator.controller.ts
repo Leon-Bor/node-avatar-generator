@@ -67,7 +67,7 @@ class ImageGeneratorController{
             Canvas: Canvas,
             width: 1024,
             height: 1024,
-            quality: 0.5,
+            quality: 1.0,
             format: "image/jpeg"
         })
 
