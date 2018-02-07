@@ -1,10 +1,15 @@
-<div class="image-card" [ngClass]="{'selected': selected}" (click)="selectImage()">
-  <img class="image-card__image" src="{{ baseUrl + '/images/bimages/' + dir.directoryName + '/' +image.fileName}}"
+<div class="image-card" [ngClass]="{'selected': selected}" (click)="selectImage()" *ngIf="(index == 0 && dir.allowNoImage == true) || index != 0">
+  <img class="image-card__image" [src]="getImageLink()"
   [ngStyle]="{'margin-top': dir.previewClip.marginTop * 3 +'px',
         'margin-left': dir.previewClip.marginLeft * 3 +'px','width': dir.previewClip.width * 3 +'px','height': dir.previewClip.height * 3 +'px'}"
         (load)="hideLoader()"
         [ngClass]="{'hidden': isLoading}"
+        *ngIf="index != 0"
         >
-
+  <img class="image-card__image" [src]="getImageLink()"
+        (load)="hideLoader()"
+        [ngClass]="{'hidden': isLoading}"
+        *ngIf="index == 0 && dir.allowNoImage == true"
+        >
   <app-ui-loader-inline [visible]="isLoading"></app-ui-loader-inline>
 </div>
