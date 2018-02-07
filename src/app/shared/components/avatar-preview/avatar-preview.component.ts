@@ -18,10 +18,7 @@ export class AvatarPreviewComponent implements OnInit {
   
   constructor(private router:Router,private route:ActivatedRoute) { }
 
-  ngOnInit() {
-
-
-  }
+  ngOnInit() { }
 
   showAvatarModal(): void {
       this.router.navigate(['generator',{ outlets: { modal: ['generated-avatar', this.md5Hash] } }]);

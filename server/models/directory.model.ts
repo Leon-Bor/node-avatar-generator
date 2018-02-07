@@ -141,7 +141,7 @@ export default class Directory {
                     width: 105,
                     height: 105
                 }
-                instanceData.selectedImage = new Image({"fileName":"00_0.png","path":"server/public/images/bimages","hashPosition":16,"directoryName":8,"hashChar":"00","zIndex":0})
+                instanceData.selectedImage = new Image({"fileName":"00_0.png","path":"server/public/images/bimages","hashPosition":16,"directoryName":8,"hashChar":"00","zIndex": 0})
                 break;
             case 9:
                 break;

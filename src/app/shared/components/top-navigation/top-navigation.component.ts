@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ElementRef } from '@angular/core';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -9,6 +10,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ElementRef } fro
 export class TopNavigationComponent implements OnInit {
 
   @ViewChild('topnav') topnav: ElementRef;
+  public baseUrl = environment.serverUrl;
 
   constructor() { }
 
