@@ -13,7 +13,7 @@
     <div class="row">
         <div *ngFor="let dir of dirs; let index = index" class="col-xs" >
           <app-dir-card
-            *ngIf="dir.images.length"
+            *ngIf="dir.images.length > 1"
             [dir]="dir"
             [selected]="currentDirIndex == index"
             (onClick)="setCurrentDir(index)"
@@ -31,12 +31,13 @@
         </div>
       </div>
       <div class="row" *ngIf="dirs && dirs[currentDirIndex]">
-          <div *ngFor="let image of dirs[currentDirIndex].images">
+          <div *ngFor="let image of dirs[currentDirIndex].images; let index = index;">
               <app-image-card
                 [image]="image"
                 [dir]="dirs[currentDirIndex]"
                 [selected]="dirs[currentDirIndex].selectedImage && dirs[currentDirIndex].selectedImage.hashChar == image.hashChar"
                 (onClick)="setSelectedImage($event)"
+                [index]="index"
               ></app-image-card>
           </div>
       </div>
