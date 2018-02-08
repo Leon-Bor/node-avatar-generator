@@ -16,9 +16,10 @@ bavatarRouter.get("/random", (request: Request, response: Response) => {
 bavatarRouter.get("/:version/:md5", (request: Request, response: Response) => {
   let md5Hash = request.params.md5;
       md5Hash = md5Hash.toLowerCase();
+      md5Hash = md5Hash.replace(".jpg", "");
   let isMd5 = md5Hash.match(/^[a-f0-9]{32}$/i)
   if(isMd5){
-    imageGeneratorController.genrateImageFromMD5(request.params.md5).then( () => {
+    imageGeneratorController.genrateImageFromMD5(md5Hash).then( () => {
       response.sendFile(path.join(__dirname, "../public/images/cache/" + request.params.version + "/" + md5Hash + "." + imageType));    
     });
   }else {

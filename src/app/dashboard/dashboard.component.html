@@ -1,7 +1,13 @@
 <div class="dashboard container-fluid" >
     <div class="row">
         <div class="col-12">
-          <p class="dashboard__title--large">{{ 'create_your_bean' | translate }}</p>
+          <p class="dashboard__title--large">
+            <span>{{ 'create_your_bean' | translate }} </span>
+
+            <span class="witter-hashtag-button-container">
+                <a href="https://twitter.com/intent/tweet?button_hashtag=BohnenGenerator&hashtags=RBTV&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #BohnenGenerator</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </span>
+          </p>
         </div>
       </div>
   <div class="dir-container" *ngIf="dirs">

@@ -21,7 +21,7 @@ export class GeneratedAvatarComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.hash = params['hash'];
-      this.link = this.baseUrl + '/bavatar/'+ this.generatorVersion+'/'+this.hash;
+      this.link = this.baseUrl + '/bavatar/'+ this.generatorVersion+'/'+this.hash+".jpg";
    });
 
   }

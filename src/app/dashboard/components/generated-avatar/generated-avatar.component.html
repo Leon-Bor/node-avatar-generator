@@ -7,7 +7,7 @@
     <div class="generared-avatar-modal">
 
       <p class="generared-avatar-modal__label">{{ 'bean_created_long' | translate }}</p>
-      <img class="generared-avatar-modal__image" [src]="baseUrl + '/bavatar/'+generatorVersion+'/'+hash" (load)="hideLoader()" [ngClass]="{'hidden': isLoading}">
+      <img class="generared-avatar-modal__image" [src]="link" (load)="hideLoader()" [ngClass]="{'hidden': isLoading}">
       <app-ui-loader-inline [visible]="isLoading" [small]="true"></app-ui-loader-inline>
       <p class="generared-avatar-modal__label">{{ 'link_to_bean' | translate }}: </p>
 
@@ -23,7 +23,7 @@
         </div>
       </div>
       
-
+      <a href="https://twitter.com/intent/tweet?button_hashtag=BohnenGenerator&hashtags=RBTV&ref_src=twsrc%5Etfw&url={{link}}" class="twitter-hashtag-button" data-show-count="false">Tweet #BohnenGenerator</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </app-modal-body>
   <app-modal-footer>
