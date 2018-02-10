@@ -15,16 +15,17 @@ export class ImageService {
 
   constructor(private http: HttpClient) {
     this.dirs = this.http.get(`${environment.serverUrl}/bavatar/images`)
-    this.statsObserver = this.http.get(`${environment.serverUrl}/bavatar/count`)
-    
-    this.statsObserver.subscribe( (stats) => {
-      this.stats.next(stats)
-    })
+
+    this.getStats();
 
   }
 
   getStats(){
     this.statsObserver = this.http.get(`${environment.serverUrl}/bavatar/count`)
+    
+    this.statsObserver.subscribe( (stats) => {
+      this.stats.next(stats)
+    })
   }
 
 }
