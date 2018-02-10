@@ -23,6 +23,7 @@ export class DashboardComponent {
   verticalOffset: number = 0;
   minusMargin: number = 250;
   interval;
+  stats;
 
   constructor(public imageService: ImageService) {
     this.imageService.dirs.subscribe( (dirs: Array<any>) =>{
@@ -31,6 +32,9 @@ export class DashboardComponent {
         return new Directory(d)
       });
       this.generateHash();
+    } )
+    this.imageService.stats.subscribe( (stats: Array<any>) =>{
+      this.stats = stats
     } )
   }
 

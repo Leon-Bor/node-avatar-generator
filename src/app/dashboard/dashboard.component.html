@@ -3,11 +3,13 @@
         <div class="col-12">
           <p class="dashboard__title--large">
             <span>{{ 'create_your_bean' | translate }} </span>
+            
 
             <span class="witter-hashtag-button-container">
                 <a href="https://twitter.com/intent/tweet?button_hashtag=BohnenGenerator&hashtags=rbtv&ref_src=twsrc%5Etfw&url=http://bohne.voteitup.net/" class="twitter-hashtag-button" data-show-count="false">Tweet #BohnenGenerator</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </span>
           </p>
+          <p class="stats">Bereits <span *ngIf="stats">{{stats.files}}</span><span *ngIf="!stats">0</span> verschiedene Avatare wurden erstellt.</p>
         </div>
       </div>
   <div class="dir-container" *ngIf="dirs">

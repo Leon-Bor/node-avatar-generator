@@ -5,6 +5,8 @@ import * as md5 from "md5";
 import { bavatarController } from "../controller/bavartar.controller"
 import { imageGeneratorController } from "../controller/image-generator.controller"
 import { version, imageType, clientUrl } from "../config";
+import * as fs from "fs";
+import * as countFiles from 'count-files';
 
 const bavatarRouter: Router = Router();
 
@@ -46,5 +48,17 @@ bavatarRouter.get("/images", (request: Request, response: Response) => {
   response.setHeader('Content-Type', 'application/json');
   response.send(JSON.stringify(bavatarController.dirs));
 });
+
+bavatarRouter.get("/count", (request: Request, response: Response) => {
+  response.setHeader('Access-Control-Allow-Origin', clientUrl);
+  response.setHeader('Content-Type', 'application/json');
+
+  let stats = countFiles(path.join(__dirname, "../public/images/cache/"), function (err, results) {
+    response.send(results);
+  })
+  
+});
+
+
 
 export { bavatarRouter };

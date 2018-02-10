@@ -5,6 +5,7 @@ import { OnDestroy, AfterContentInit, AfterViewInit } from '@angular/core/src/me
 import { Meta } from '@angular/platform-browser';
 
 import { Router } from '@angular/router';
+import { ImageService } from '../../../shared/services/image.service';
 @Component({
   selector: 'app-generated-avatar',
   templateUrl: './generated-avatar.component.html',
@@ -20,7 +21,7 @@ export class GeneratedAvatarComponent implements OnInit, AfterContentInit, After
   public href;
   public loadTwitterButton = false;
 
-  constructor(private route: ActivatedRoute, private meta: Meta, public router: Router) {    
+  constructor(private route: ActivatedRoute, private meta: Meta, public router: Router, private imageService: ImageService) {    
 
   }
 
@@ -52,6 +53,7 @@ export class GeneratedAvatarComponent implements OnInit, AfterContentInit, After
 
   hideLoader(): void {
     this.isLoading = false;
+    this.imageService.getStats();
   }
 
 }
