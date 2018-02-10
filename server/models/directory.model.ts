@@ -144,6 +144,16 @@ export default class Directory {
                 instanceData.selectedImage = new Image({"fileName":"00_0.png","path":"server/public/images/bimages","hashPosition":16,"directoryName":8,"hashChar":"00","zIndex": 0})
                 break;
             case 9:
+                // hearz
+                instanceData.defaultImage = "00_0.png";
+                instanceData.previewImage = "01_8000.png";
+                instanceData.previewClip= {
+                    marginTop: -90,
+                    marginLeft: -92,
+                    width: 140,
+                    height: 140
+                }
+                instanceData.selectedImage = new Image({"fileName":"00_0.png","path":"server/public/images/bimages","hashPosition":18,"directoryName":9,"hashChar":"00","zIndex": 0})
                 break;
             case 10:
                 break;

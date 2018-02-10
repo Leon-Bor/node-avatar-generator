@@ -7,7 +7,7 @@
     <div class="generared-avatar-modal">
 
       <p class="generared-avatar-modal__label">{{ 'bean_created_long' | translate }}</p>
-      <img class="generared-avatar-modal__image" [src]="baseUrl + '/bavatar/'+generatorVersion+'/'+hash" (load)="hideLoader()" [ngClass]="{'hidden': isLoading}">
+      <img class="generared-avatar-modal__image" [src]="link" (load)="hideLoader()" [ngClass]="{'hidden': isLoading}">
       <app-ui-loader-inline [visible]="isLoading" [small]="true"></app-ui-loader-inline>
       <p class="generared-avatar-modal__label">{{ 'link_to_bean' | translate }}: </p>
 
@@ -22,7 +22,12 @@
           </a>
         </div>
       </div>
-      
+      <p class="spacing"></p>
+      <a href="{{href}}"  [ngClass]="{'twitter-hashtag-button': loadTwitterButton}" data-show-count="false" data-size="large" >Tweet #BohnenGenerator</a>
+      <div class="teilen">
+        <img src="{{baseUrl}}/images/arrow.png">
+        <p><b>Leute haut mal einen raus und teilt euren Avatar!</b></p>
+      </div>
 
     </div>
   </app-modal-body>

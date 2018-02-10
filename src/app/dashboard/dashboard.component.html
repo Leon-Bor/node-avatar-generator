@@ -1,7 +1,15 @@
 <div class="dashboard container-fluid" >
     <div class="row">
         <div class="col-12">
-          <p class="dashboard__title--large">{{ 'create_your_bean' | translate }}</p>
+          <p class="dashboard__title--large">
+            <span>{{ 'create_your_bean' | translate }} </span>
+            
+
+            <span class="witter-hashtag-button-container">
+                <a href="https://twitter.com/intent/tweet?button_hashtag=BohnenGenerator&hashtags=rbtv&ref_src=twsrc%5Etfw&url=http://bohne.voteitup.net/" class="twitter-hashtag-button" data-show-count="false">Tweet #BohnenGenerator</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </span>
+          </p>
+          <p class="stats">Bereits <span *ngIf="stats">{{stats.files}}</span><span *ngIf="!stats">0</span> verschiedene Avatare wurden erstellt.</p>
         </div>
       </div>
   <div class="dir-container" *ngIf="dirs">
@@ -41,6 +49,18 @@
               ></app-image-card>
           </div>
       </div>
+
+      <div class="row d-none d-sm-none d-md-block">
+        <div class="col-12">
+          <div class="twitter-feed-container">
+              <div class="twitter-feed">
+                  <a class="twitter-timeline"  href="https://twitter.com/hashtag/BohnenGenerator" data-widget-id="961723568185905152" data-chrome="noheader, nofooter, noborders, noscrollbar, transparent" data-height="100" data-tweet-limit="3" data-theme="dark">#BohnenGenerator Tweets</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              </div>
+          </div>
+
+        </div>
+      </div>
     </div>
 
     <div class="generator-container__preview col-sm" [ngStyle]="{'margin-top': verticalOffset+'px' }">
@@ -49,3 +69,4 @@
 
   </div>
 </div>
+

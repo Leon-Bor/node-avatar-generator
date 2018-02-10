@@ -1,9 +1,45 @@
 <html>
     <head>
-    <title>Bavatar</title>
+    <title>Bohnen Avatar</title>
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@kenny661_" />
+    <meta property="og:url" content="http://bohne.voteitup.net/" />
+    <meta property="og:title" content="Bohnen Avatar Generator" />
+    <meta property="og:description" content="Erstelle deinen eigenen Bohnen-Avatar." />
+    <meta property="og:image" content="<%= url %>" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113863042-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113863042-1');
+    </script>
+
     </head>
-    <body>
-        <p><%= md5 %></p>
-        <img src="<%= url %>" width="1024" height="1024">
+    <body >
+        <style>
+            body{
+                text-align: center;
+            }
+            .button {
+                text-align: center;
+                background-color: #fff700;
+                font-size: 30px;
+                border: 2px solid #d8d100;
+                width: 100%;
+                margin: 20px auto;
+                border-radius: 5px;
+                max-width: 512px;
+                padding: 10px;
+                text-decoration: none;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+        }</style>
+        <img src="<%= url %>" width="512" height="512">
+        <br><br>
+        <a class="button" href="http://bohne.voteitup.net">Zum Bohnen Generator</a>
     </body>
+    
 </html>

@@ -5,6 +5,8 @@ import { ImageService } from "../shared/services/image.service";
 import Image from "../../../server/models/image.model";
 import Directory from "../../../server/models/directory.model";
 import { environment } from "../../environments/environment" 
+import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
+let twttr;
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +23,7 @@ export class DashboardComponent {
   verticalOffset: number = 0;
   minusMargin: number = 250;
   interval;
+  stats;
 
   constructor(public imageService: ImageService) {
     this.imageService.dirs.subscribe( (dirs: Array<any>) =>{
@@ -29,6 +32,9 @@ export class DashboardComponent {
         return new Directory(d)
       });
       this.generateHash();
+    } )
+    this.imageService.stats.subscribe( (stats: Array<any>) =>{
+      this.stats = stats
     } )
   }
 

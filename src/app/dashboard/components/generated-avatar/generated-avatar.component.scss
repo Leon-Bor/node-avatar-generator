@@ -18,4 +18,29 @@
         font-size: 20px;
         margin: 20px 0;
     }
+
+    .spacing{
+        margin-top: 50px;
+    }
+    .teilen{
+        height: 60px;
+        position: relative;
+        p{
+            font-size: 20px;
+            margin-top: 40px;
+        }
+        img{
+            top: -65px;
+            right: 60px;
+            @media only screen and (max-width: 557px) {
+                right: 30px;
+            }
+            @media only screen and (max-width: 477px) {
+                right: 0px;
+            }
+            position: absolute;
+            transform: rotate(90deg);
+            width: 50px;
+        }
+    }
 }
