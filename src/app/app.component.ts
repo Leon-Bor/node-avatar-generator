@@ -9,6 +9,7 @@ import { Store } from '@ngrx/store';
 import { ISimpleResponse } from './shared/interfaces/simple.interface';
 import { TranslateService } from 'ng2-translate';
 import * as locale from 'browser-locale';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit {
 
   observable$: Observable<ISimpleResponse>;
 
-  constructor(private http: HttpClient, translate: TranslateService) {
+  constructor(private http: HttpClient, translate: TranslateService,private _router: Router) {
         // this language will be used as a fallback when a translation isn't found in the current language
         translate.setDefaultLang('en');
          // the lang to use, if the lang isn't available, it will use the current loader to get them

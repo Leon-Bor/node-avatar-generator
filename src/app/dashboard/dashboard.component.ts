@@ -5,6 +5,8 @@ import { ImageService } from "../shared/services/image.service";
 import Image from "../../../server/models/image.model";
 import Directory from "../../../server/models/directory.model";
 import { environment } from "../../environments/environment" 
+import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
+let twttr;
 
 @Component({
   selector: 'app-dashboard',
