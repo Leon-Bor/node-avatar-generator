@@ -21,14 +21,16 @@ export class GeneratedAvatarComponent implements OnInit, AfterContentInit, After
   public loadTwitterButton = false;
 
   constructor(private route: ActivatedRoute, private meta: Meta, public router: Router) {    
-    this.href = this.baseUrl + '/#' + this.router.url;
-    this.href = 'https://twitter.com/intent/tweet?button_hashtag=BohnenGenerator&hashtags=RBTV&ref_src=twsrc%5Etfw&url=' + this.href + "/twitter";
+
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.hash = params['hash'];
       this.link = this.baseUrl + '/bavatar/'+ this.generatorVersion+'/'+this.hash+".jpg";
+
+      this.href = this.baseUrl + '/bavatar/'+ this.generatorVersion+'/'+this.hash+ "/twitter";
+      this.href = 'https://twitter.com/intent/tweet?button_hashtag=BohnenGenerator&hashtags=RBTV&ref_src=twsrc%5Etfw&url=' + this.href;
    });
    
    this.meta.addTag({ property: 'og:description', content: 'Erstelle deinen eigenen Bohnen-Avatar' });
