@@ -22,7 +22,13 @@
           </a>
         </div>
       </div>
-      <a href="{{href}}"  [ngClass]="{'twitter-hashtag-button': loadTwitterButton}" data-show-count="false">Tweet #BohnenGenerator</a>
+      <p class="spacing"></p>
+      <a href="{{href}}"  [ngClass]="{'twitter-hashtag-button': loadTwitterButton}" data-show-count="false" data-size="large" >Tweet #BohnenGenerator</a>
+      <div class="teilen">
+        <img src="{{baseUrl}}/images/arrow.png">
+        <p><b>Leute haut mal einen raus und teilt euren Avatar!</b></p>
+      </div>
+
     </div>
   </app-modal-body>
   <app-modal-footer>
