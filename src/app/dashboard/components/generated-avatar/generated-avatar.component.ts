@@ -30,7 +30,7 @@ export class GeneratedAvatarComponent implements OnInit, AfterContentInit, After
       this.link = this.baseUrl + '/bavatar/'+ this.generatorVersion+'/'+this.hash+".jpg";
 
       this.href = this.baseUrl + '/bavatar/'+ this.generatorVersion+'/'+this.hash+ "/twitter";
-      this.href = 'https://twitter.com/intent/tweet?button_hashtag=BohnenGenerator&hashtags=RBTV&ref_src=twsrc%5Etfw&url=' + this.href;
+      this.href = 'https://twitter.com/intent/tweet?button_hashtag=BohnenGenerator&hashtags=rbtv&ref_src=twsrc%5Etfw&url=' + this.href;
    });
    
    this.meta.addTag({ property: 'og:description', content: 'Erstelle deinen eigenen Bohnen-Avatar' });
