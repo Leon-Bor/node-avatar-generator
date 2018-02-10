@@ -12,8 +12,9 @@ app.disable("x-powered-by");
 app.use(json());
 app.use(compression());
 app.use(urlencoded({ extended: true }));
+app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
-
+app.set('views', __dirname + '/views');
 // api routes
 app.use("/bavatar/", bavatarRouter);
 
