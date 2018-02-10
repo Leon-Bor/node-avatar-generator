@@ -22,8 +22,7 @@
           </a>
         </div>
       </div>
-      
-      <a href="https://twitter.com/intent/tweet?button_hashtag=BohnenGenerator&hashtags=RBTV&ref_src=twsrc%5Etfw&url={{href}}" class="twitter-hashtag-button" data-show-count="true">Tweet #BohnenGenerator</a>
+      <a href="{{href}}"  [ngClass]="{'twitter-hashtag-button': loadTwitterButton}" data-show-count="false">Tweet #BohnenGenerator</a>
     </div>
   </app-modal-body>
   <app-modal-footer>

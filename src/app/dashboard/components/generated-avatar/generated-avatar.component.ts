@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from "../../../../environments/environment" 
-import { OnDestroy, AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { OnDestroy, AfterContentInit, AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Meta } from '@angular/platform-browser';
 
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './generated-avatar.component.html',
   styleUrls: ['./generated-avatar.component.scss']
 })
-export class GeneratedAvatarComponent implements OnInit, AfterContentInit {
+export class GeneratedAvatarComponent implements OnInit, AfterContentInit, AfterViewInit {
 
   public hash: string;
   public baseUrl = environment.serverUrl;
@@ -18,11 +18,14 @@ export class GeneratedAvatarComponent implements OnInit, AfterContentInit {
   public link;
   public isLoading = true;
   public href;
+  public loadTwitterButton = false;
 
-  constructor(private route: ActivatedRoute, private meta: Meta, public router: Router) { }
+  constructor(private route: ActivatedRoute, private meta: Meta, public router: Router) {    
+    this.href = this.baseUrl + this.router.url;
+    this.href = 'https://twitter.com/intent/tweet?button_hashtag=BohnenGenerator&hashtags=RBTV&ref_src=twsrc%5Etfw&url=' + this.href;
+  }
 
   ngOnInit() {
-    this.href = this.router.url;
     this.route.params.subscribe(params => {
       this.hash = params['hash'];
       this.link = this.baseUrl + '/bavatar/'+ this.generatorVersion+'/'+this.hash+".jpg";
@@ -47,7 +50,11 @@ export class GeneratedAvatarComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit(){
-    (<any>window).twttr.widgets.load()
+    this.loadTwitterButton = true;
+  }
+
+  ngAfterViewInit() {
+      (<any>window).twttr.widgets.load();
   }
 
   hideLoader(): void {
