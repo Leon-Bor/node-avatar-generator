@@ -14,22 +14,23 @@ app.use(compression());
 app.use(urlencoded({ extended: true }));
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-// api routes
-app.use("/bavatar/", bavatarRouter);
-
 
 console.log("nodemon?222", process.env.NODE_ENV)
 
 if (app.get("env") === "production") {
   app.use(express.static(path.join(__dirname, "/../client"))); 
   app.use(express.static(path.join(__dirname, "../../server/public"))); 
+  app.set('views', path.join(__dirname, '../../server/views'));
 } else {
   console.log("dev")
   app.use(express.static(path.join(__dirname, "/public")));
+  app.set('views', path.join(__dirname, 'views'));
 }
+
+
+// api routes
+app.use("/bavatar/", bavatarRouter);
 
 // catch 404 and forward to error handler
 app.use((req: express.Request, res: express.Response, next) => {
