@@ -1,4 +1,4 @@
-## node-avatar-generator (Made for Rocketbeans.tv)
+## Node Avatar Generator (Made for Rocketbeans.tv)
 
 - Angular 5+
 - ExpressJS ( 4.x - with compression )
