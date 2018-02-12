@@ -8,4 +8,15 @@
   @media (min-width: 575px) {
     padding: 20px;
   }
+  .contact{
+    width: 100%;
+    float: right;
+    color: white;
+    text-align: right;
+
+    margin-top: 50;
+    a{
+      color: #f2f2f2;    
+    }
+  }
 }
