@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  clientUrl: 'http://bohne.voteitup.net',
-  serverUrl: 'http://bohne.voteitup.net',
+  clientUrl: 'http://bohnen-generator.voteitup.net',
+  serverUrl: 'http://bohnen-generator.voteitup.net',
   version: "v0.0.1"
 };
