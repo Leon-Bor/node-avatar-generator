@@ -14,7 +14,7 @@ The md5 hash is splitted into 16 categories:
 
 To store the old generated images, there is a version number in the image link. After changing or adding images the version number should be increased. Otherwise Avatars generated in the past might change.
 
-This project also contains a UI for building that avatar. See a demo here http://bohne.voteitup.net.
+This project also contains a UI for building that avatar. See a demo here http://bohnen-generator.voteitup.net.
 
 
 ## Install / Development
