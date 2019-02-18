@@ -6,6 +6,6 @@ export const digest = "sha256";
 export const imageType = "jpg";
 
 export const clientUrl = process.env.NODE_ENV == "production" ? 
-                        'http://bohne.voteitup.net' : 'http://localhost:5000';
+                        'http://bohnen-generator.share-my-app.com' : 'http://localhost:5000';
 export const serverUrl = process.env.NODE_ENV == "production" ? 
-                        'http://bohne.voteitup.net' : 'http://localhost:'+serverPort;
+                        'http://bohnen-generator.share-my-app.com' : 'http://localhost:'+serverPort;
