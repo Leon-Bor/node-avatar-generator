@@ -2,6 +2,7 @@ import { json, urlencoded } from "body-parser";
 import * as compression from "compression";
 import * as express from "express";
 import * as path from "path";
+import * as cors from "cors";
 
 import { bavatarRouter } from "./routes/bavatar";
 
@@ -9,6 +10,7 @@ const app: express.Application = express();
 
 app.disable("x-powered-by");
 
+app.use(cors())
 app.use(json());
 app.use(compression());
 app.use(urlencoded({ extended: true }));
@@ -19,8 +21,8 @@ app.set('view engine', 'ejs');
 console.log("nodemon?222", process.env.NODE_ENV)
 
 if (app.get("env") === "production") {
-  app.use(express.static(path.join(__dirname, "/../client"))); 
-  app.use(express.static(path.join(__dirname, "../../server/public"))); 
+  app.use(express.static(path.join(__dirname, "/../client")));
+  app.use(express.static(path.join(__dirname, "../../server/public")));
   app.set('views', path.join(__dirname, '../../server/views'));
 } else {
   console.log("dev")
