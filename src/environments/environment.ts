@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  clientUrl: 'http://localhost:5000',
-  serverUrl: 'http://localhost:5005',
-  version: "v0.0.1"
+  clientUrl: "http://localhost:4200",
+  serverUrl: "http://localhost:4200",
+  version: "v0.0.1",
 };

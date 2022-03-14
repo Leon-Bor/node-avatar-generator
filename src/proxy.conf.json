@@ -1,0 +1,12 @@
+{
+  "/bavatar/*": {
+    "target": "http://localhost:5005",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/images/*": {
+    "target": "http://localhost:5005",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}
