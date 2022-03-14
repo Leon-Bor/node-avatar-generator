@@ -5,7 +5,7 @@ import Image from "../models/image.model";
 import { version, imageType } from "../config";
 import { bavatarController } from "../controller/bavartar.controller";
 import * as mergeImages from "merge-images";
-import * as Canvas from "canvas";
+import { Canvas, Image as CanvasImage } from "canvas";
 import * as mkdirp from "mkdirp";
 import * as resizeImg from "resize-img";
 
@@ -75,6 +75,7 @@ class ImageGeneratorController {
         height: 1024,
         quality: 1.0,
         format: "image/jpeg",
+        Image: CanvasImage,
       });
 
       let renderedImagePath = `${this.imagePath}/${md5}.${imageType}`;
@@ -93,20 +94,16 @@ class ImageGeneratorController {
 
   writeImageToDisk(b64Image, path): Promise<void> {
     return new Promise((resolve, reject) => {
-      mkdirp(this.imagePath, function (err) {
-        if (err) console.error(err);
-        else console.log("pow!");
-
-        fs.writeFile(
-          path,
-          b64Image.replace(/^data:image\/jpeg;base64,/, ""),
-          "base64",
-          function (err) {
-            console.log(1, err);
-            resolve();
-          }
-        );
-      });
+      const made = mkdirp.sync(this.imagePath);
+      fs.writeFile(
+        path,
+        b64Image.replace(/^data:image\/jpeg;base64,/, ""),
+        "base64",
+        function (err) {
+          console.log(1, err);
+          resolve();
+        }
+      );
     });
   }
 }
